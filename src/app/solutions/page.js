@@ -81,7 +81,7 @@ export default function SolutionsPage() {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/videos/remedy-loop.mp4" type="video/mp4" />
+              <source src="/video/intro.mp4" type="video/mp4" />
             </video>
           </div>
           <p className="text-gray-600 mt-4 leading-relaxed">

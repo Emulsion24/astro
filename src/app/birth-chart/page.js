@@ -39,7 +39,7 @@ export default function BirthChartPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     if (formData.selectedProblems.length === 0) {
       setError('Please select at least one problem')
       return
@@ -48,16 +48,15 @@ export default function BirthChartPage() {
     setLoading(true)
     setError('')
     setSuccess(true)
-    
-    // Store form data in memory
+
+    // ✅ Store form data in sessionStorage for the next page
     if (typeof window !== 'undefined') {
-      window.birthChartData = formData
+      sessionStorage.setItem('birthChartData', JSON.stringify(formData))
     }
-    
-    // Navigate to solutions page after brief delay
-    setTimeout(() => {
-      router.push('/solutions')
-    }, 1000)
+
+    // Delay before redirect for UI effect
+    await new Promise((res) => setTimeout(res, 1000))
+    router.push('/solutions')
   }
 
   return (
@@ -65,7 +64,7 @@ export default function BirthChartPage() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{animationDelay: '700ms'}}></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '700ms' }}></div>
       </div>
 
       <div className="container mx-auto max-w-4xl relative z-10">
@@ -91,22 +90,19 @@ export default function BirthChartPage() {
                 <label className="block text-gray-800 font-semibold mb-2 text-sm uppercase tracking-wide">
                   Full Name *
                 </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-200 text-gray-800"
-                    placeholder="Enter your full name"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-200 text-gray-800"
+                />
               </div>
 
-              {/* Birth Details Grid */}
+              {/* Birth Details */}
               <div className="grid md:grid-cols-3 gap-4">
-                {/* Date of Birth */}
                 <div>
                   <label className="block text-gray-800 font-semibold mb-2 text-sm uppercase tracking-wide">
                     <Calendar className="w-4 h-4 inline mr-1 mb-1" />
@@ -122,7 +118,6 @@ export default function BirthChartPage() {
                   />
                 </div>
 
-                {/* Time of Birth */}
                 <div>
                   <label className="block text-gray-800 font-semibold mb-2 text-sm uppercase tracking-wide">
                     <Clock className="w-4 h-4 inline mr-1 mb-1" />
@@ -138,7 +133,6 @@ export default function BirthChartPage() {
                   />
                 </div>
 
-                {/* Place of Birth */}
                 <div>
                   <label className="block text-gray-800 font-semibold mb-2 text-sm uppercase tracking-wide">
                     <MapPin className="w-4 h-4 inline mr-1 mb-1" />
@@ -150,8 +144,8 @@ export default function BirthChartPage() {
                     value={formData.placeOfBirth}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-200 text-gray-800"
                     placeholder="City, Country"
+                    className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-200 text-gray-800"
                   />
                 </div>
               </div>
@@ -193,10 +187,7 @@ export default function BirthChartPage() {
                 )}
               </div>
 
-              {/* Problem Description */}
-             
-
-              {/* Error Message */}
+              {/* Error & Success Messages */}
               {error && (
                 <div className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700">
                   <AlertCircle className="w-5 h-5 flex-shrink-0" />
@@ -204,7 +195,6 @@ export default function BirthChartPage() {
                 </div>
               )}
 
-              {/* Success Message */}
               {success && (
                 <div className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700">
                   <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
@@ -237,7 +227,6 @@ export default function BirthChartPage() {
               </button>
             </form>
 
-            {/* Security Badge */}
             <div className="mt-6 flex items-center justify-center gap-2 text-gray-500 text-sm">
               <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                 <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">

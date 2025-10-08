@@ -240,9 +240,12 @@ export default function HomePage() {
           
           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16">
             {[
-              { num: 1, title: 'Enter Birth Details', desc: 'Date, time, and place of birth for accurate calculations', icon: '📅' },
-              { num: 2, title: 'Select Problems', desc: 'Choose up to 3 problems from 15 life areas', icon: '🎯' },
-              { num: 3, title: 'Make Payment', desc: 'Secure payment of just ₹222', icon: '💳' },
+
+              { num: 1, title: 'Make Payment', desc: 'Secure payment of just ₹222', icon: '💳' },
+              { num: 2, title: 'Enter Birth Details', desc: 'Date, time, and place of birth for accurate calculations', icon: '📅' },
+           
+              
+                 { num: 3, title: 'Select Problems', desc: 'Choose up to 3 problems from 15 life areas', icon: '🎯' },
               { num: 4, title: 'Get Solutions', desc: 'Instant access to your personalized report', icon: '🎁' }
             ].map((step) => (
               <div key={step.num} className="text-center group">
