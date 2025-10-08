@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 
 export const metadata = {
@@ -13,33 +14,33 @@ export default function RootLayout({ children }) {
         <nav className="backdrop-blur-md bg-gradient-to-r from-purple-900/90 via-pink-900/90 to-orange-800/90 text-white shadow-lg sticky top-0 z-50 border-b border-white/10">
           <div className="container mx-auto flex justify-between items-center px-6 py-4">
             {/* Brand */}
-            <a
+            <Link
               href="/"
               className="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 hover:from-pink-300 hover:to-yellow-200 transition-all duration-300"
             >
               🔮 AstroSolutions
-            </a>
+            </Link>
 
             {/* Links */}
             <div className="hidden sm:flex items-center space-x-8">
-              <a
+              <Link
                 href="/"
                 className="hover:text-yellow-300 transition-colors font-medium text-lg"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/pricing"
                 className="hover:text-yellow-300 transition-colors font-medium text-lg"
               >
                 Pricing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/payment"
                 className="px-5 py-2.5 rounded-full bg-gradient-to-r from-yellow-400 to-pink-500 hover:from-yellow-500 hover:to-pink-600 text-gray-900 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Get Started ✨
-              </a>
+              </Link>
             </div>
 
             {/* Mobile menu placeholder (optional later) */}
@@ -69,10 +70,10 @@ export default function RootLayout({ children }) {
                 <h4 className="text-xl font-semibold mb-3 text-yellow-300">Quick Links</h4>
                 <ul className="space-y-2 text-gray-300">
                   <li>
-                    <a href="/" className="hover:text-yellow-300 transition-colors">Home</a>
+                    <Link href="/" className="hover:text-yellow-300 transition-colors">Home</Link>
                   </li>
                   <li>
-                    <a href="/pricing" className="hover:text-yellow-300 transition-colors">Pricing</a>
+                    <Link href="/pricing" className="hover:text-yellow-300 transition-colors">Pricing</Link>
                   </li>
                   
                  

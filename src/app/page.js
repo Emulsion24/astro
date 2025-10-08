@@ -196,7 +196,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
-            What You'll Discover
+            What You&apos;ll Discover
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Your personalized astrology report includes everything you need to understand and improve your life

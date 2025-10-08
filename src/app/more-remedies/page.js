@@ -53,7 +53,7 @@ export default function MoreRemediesPage() {
           {/* What's Included */}
           <div className="border-t-2 border-gray-200 pt-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              What's Included in This Bundle
+              What&apos;s Included in This Bundle
             </h2>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -105,8 +105,8 @@ export default function MoreRemediesPage() {
             {/* Testimonial */}
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
               <p className="text-gray-700 italic mb-3">
-                "I was struggling with multiple problems in my life. This bundle gave me complete solutions 
-                for everything. The remedies actually work! Best investment I've made."
+                &quot;I was struggling with multiple problems in my life. This bundle gave me complete solutions 
+                for everything. The remedies actually work! Best investment I&apos;ve made.&quot;
               </p>
               <p className="text-gray-600 font-semibold">- Priya S., Mumbai</p>
             </div>
